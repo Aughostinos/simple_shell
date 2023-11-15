@@ -12,9 +12,14 @@
 
 int main(void)
 {
-	char *command = NULL;
+	char *command = NULL; 
 	size_t len = 0;
 	ssize_t readc;
+	pid_t pid;
+	char *argv[2]; 
+
+	argv[0] = command;
+	argv[1] = NULL;
 
 	while (1)
 	{
@@ -36,7 +41,7 @@ int main(void)
 
 
 	/*create a child process*/
-	pid_t pid = fork();
+	pid = fork();
 
 	if (pid == -1)
 	{
@@ -48,7 +53,6 @@ int main(void)
 	if (pid == 0)
 	{
 		/*Execute the command*/
-		char *argv[] = {command, NULL};
 
 		execve(command, argv, NULL);
 		perror("execve");
