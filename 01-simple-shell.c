@@ -16,10 +16,7 @@ int main(void)
 	size_t len = 0;
 	ssize_t readc;
 	pid_t pid;
-	char *argv[2]; 
-
-	argv[0] = command;
-	argv[1] = NULL;
+	char *argv[2];
 
 	while (1)
 	{
@@ -53,6 +50,8 @@ int main(void)
 	if (pid == 0)
 	{
 		/*Execute the command*/
+		argv[0] = command;
+		argv[1] = NULL;
 
 		execve(command, argv, NULL);
 		perror("execve");
