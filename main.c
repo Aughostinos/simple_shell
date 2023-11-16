@@ -14,6 +14,7 @@ int main(void)
 	while (1)
 	{
 		printf("$ ");
+		fflush(stdout);
 		cmd = get_cmd();
 
 	parsed_cmd = parse_cmd(cmd);

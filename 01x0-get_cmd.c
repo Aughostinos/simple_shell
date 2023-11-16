@@ -8,12 +8,15 @@ char *get_cmd(void)
 {
 	char *cmd = NULL;
 	size_t len = 0;
+	ssize_t nread;
 
-	if (getline(&cmd, &len, stdin) == -1)
+	nread = getline(&cmd, &len, stdin);
+	if (nread == -1)
 	{
 	if (feof(stdin))
 	{
  		/* End of file  */
+		free(cmd);
 		printf("\n");
 		exit(EXIT_SUCCESS);
 	}
@@ -24,6 +27,6 @@ char *get_cmd(void)
 	}
 	}
 
+
 	return cmd;
 }
-
