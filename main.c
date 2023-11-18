@@ -1,11 +1,12 @@
 #include "main.h"
 
-int main(void)
+int main(int argx, char **argv)
 {
-	char *cmd = NULL, *cmd_cp = NULL, *token, **argv;
+	char *cmd = NULL, *cmd_cp = NULL, *token;
 	size_t len = 0;
 	ssize_t getcmd;
 	int ntoken = 0, i;
+	(void) argc;
 
 	while (1)
 	{
