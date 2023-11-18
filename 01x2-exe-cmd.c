@@ -3,12 +3,11 @@
  * exe_cmd - Executes a command
  * @cmd: Command to execute
  */
-void exe_cmd(char *cmd)
+void exe_cmd(char **argv)
 {
-	char *argv[2];
+	char *cmd = NULL;
 
 	argv[0] = cmd;
-	argv[1] = NULL;
 
 	if (execve(cmd, argv, NULL) == -1)
 	{
