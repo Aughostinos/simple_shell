@@ -5,7 +5,7 @@ int main(void)
 	char *cmd = NULL, *cmd_cp = NULL, *token, **argv;
 	size_t len = 0;
 	ssize_t getcmd;
-	int ntoken = 0;
+	int ntoken = 0, i;
 
 	while (1)
 	{
@@ -53,7 +53,7 @@ int main(void)
 	/* Store tokens */
 	token = strtok(cmd_cp, " ");
 
-	for (int i = 0; token != NULL; i++)
+	for (i = 0; token != NULL; i++)
 	{
 		argv[i] = malloc(sizeof(char) * strlen(token));
 		strcpy(argv[i], token);
