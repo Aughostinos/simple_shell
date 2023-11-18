@@ -9,8 +9,9 @@
 char *parse_cmd(char *cmd)
 {
 	char *newline = strchr(cmd, '\n');
+
 	if (newline)
 		*newline = '\0'; /* Remove newline at the end */
-	return cmd;
+	return (cmd);
 }
 

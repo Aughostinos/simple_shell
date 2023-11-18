@@ -15,7 +15,7 @@ char *get_cmd(void)
 	{
 	if (feof(stdin))
 	{
- 		/* End of file  */
+		/* End of file*/
 		free(cmd);
 		printf("\n");
 		exit(EXIT_SUCCESS);
@@ -28,5 +28,5 @@ char *get_cmd(void)
 	}
 
 
-	return cmd;
+	return (cmd);
 }
